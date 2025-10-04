@@ -34,6 +34,14 @@ export default function App() {
     fetchQr();
   }, []);
 
+  const handleDownload = () => {
+    if (!qrBase64) return;
+    const link = document.createElement("a");
+    link.href = `data:image/png;base64,${qrBase64}`;
+    link.download = "qrcode.jpg";
+    link.click();
+  };
+
   return (
     <section className="w-full min-h-screen bg-rose-100 p-4 flex justify-center items-center">
       <div className="w-8/12 h-6/12 bg-white p-8 rounded-lg">
@@ -66,7 +74,7 @@ export default function App() {
           ) : (
             <>
               <img className={`${!data ? "hidden" : "w-10/12 lg:w-6/12"}`} src={`data:image/png;base64,${qrBase64}`} />
-              <button type="submit" className={`${!data ? "hidden" : "w-full btn-base bg-rose-200"}`}>
+              <button type="submit" className={`${!data ? "hidden" : "w-full btn-base bg-rose-200"}`} onClick={handleDownload}>
                 <p className="hidden md:block px-2">DownLoad</p>
                 <i className="fa-solid fa-download"></i>
               </button>
