@@ -73,7 +73,8 @@ export default function App() {
             </div>
           ) : (
             <>
-              <img className={`${!data ? "hidden" : "w-10/12 lg:w-6/12"}`} src={`data:image/png;base64,${qrBase64}`} />
+            <h1 className={`${!data ? "hidden" : "mt-6 font-bold"}`}>Your QR Code <i className="fa-solid fa-qrcode"></i> </h1>
+              <img className={`${!data ? "hidden" : "w-10/12 lg:w-6/12 xl:w-4/12"}`} src={`data:image/png;base64,${qrBase64}`} />
               <button type="submit" className={`${!data ? "hidden" : "w-full btn-base bg-rose-200"}`} onClick={handleDownload}>
                 <p className="hidden md:block px-2">DownLoad</p>
                 <i className="fa-solid fa-download"></i>
