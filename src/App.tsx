@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <section className="w-full min-h-screen bg-rose-100 p-4 flex justify-center items-center">
-      <div className="w-8/12 h-6/12 bg-white p-8 rounded-lg">
+      <div className="w-full lg:w-8/12 bg-white p-8 rounded-lg">
         <h1 className="text-center font-bold">QR Code Generator</h1>
         <p className="text-red-500 text-center mt-2">**API from API Ninjas**</p>
         <div className="w-full flex flex-wrap mt-10 gap-y-4">
